@@ -42,7 +42,7 @@ def self.minimax(newBoard, player)
 
     # loop through available spots     
     avail_spots.each do |free_spot| 
-        move{} 
+        move{} # create a move object
         move.index = newBoard[avail_spots[free_spot]]
         newBoard[avail_spots[free_spot]] = player
 
@@ -56,7 +56,7 @@ def self.minimax(newBoard, player)
             end
 
           #reset the spot to empty
-          newBoard[avail_spots[free_spot]] = move.index
+          newBoard[avail_spots[free_spot]] = move.index # hence why we dont need a temporary board
 
           #push the object to the array
           moves.push(move)
@@ -65,6 +65,7 @@ def self.minimax(newBoard, player)
 
    # if it is the computer's turn loop over the moves and choose the move with the highest score
    best_move = 0
+   
     if player == ai_player
         best_score = -10000
         moves.each do |move|
